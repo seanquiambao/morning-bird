@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { Href, Link } from "expo-router";
-import Route from "@/components/dashboard/route";
+
 const HomeScreen = () => {
   return (
     <View className="bg-blue-500">
