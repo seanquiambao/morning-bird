@@ -1,9 +1,12 @@
+import { Href, Link } from "expo-router";
 import { Text, View } from "react-native";
 
 const DashboardScreen = () => {
   return (
     <View>
-      <Text>Dashboard Screen</Text>
+      <Link href={"/routes/0" as Href}>
+        <Text>Dashboard Screen</Text>
+      </Link>
     </View>
   );
 };
