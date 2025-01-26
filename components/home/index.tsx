@@ -1,4 +1,4 @@
-import { Text, Image } from "react-native";
+import { Text, Image, ImageSourcePropType } from "react-native";
 import { Link } from "expo-router";
 import { ImageBackground } from "react-native";
 import bg1 from "@/assets/images/bg1.png";
@@ -7,13 +7,13 @@ import logo from "@/assets/images/logo.png";
 const HomeScreen = () => {
   return (
     <ImageBackground
-      source={bg1}
+      source={bg1 as ImageSourcePropType}
       className="flex flex-col h-full w-full p-10 items-center gap-6"
     >
       <Text className="text-8xl font-bold text-white self-center text-center">
         Morning Bird
       </Text>
-      <Image source={logo} />
+      <Image source={logo as ImageSourcePropType} />
       <Text className="text-white text-4xl font-bold text-center">
         Jumpstart your morning routine
       </Text>

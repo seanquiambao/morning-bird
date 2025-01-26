@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, ImageSourcePropType } from "react-native";
 import { ImageBackground } from "react-native";
 import { Href, Link } from "expo-router";
 import bg1 from "@/assets/images/bg1.png";
@@ -9,7 +9,10 @@ type props = {
 };
 const RoutesScreen = ({ source, destination }: props) => {
   return (
-    <ImageBackground source={bg1} className="flex flex-col p-4 h-full">
+    <ImageBackground
+      source={bg1 as ImageSourcePropType}
+      className="flex flex-col p-4 h-full"
+    >
       <View>
         <Link href={"/routes/edit" as Href}>
           <Text className="text-white">Hello</Text>

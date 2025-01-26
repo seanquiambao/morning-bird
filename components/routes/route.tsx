@@ -1,5 +1,6 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, ImageSourcePropType } from "react-native";
 import React from "react";
+import alt_route from "@/assets/icons/alt_route.png";
 
 interface props {
   routeName: string;
@@ -20,10 +21,7 @@ const Route = ({ routeName, eta }: props) => {
   return (
     <View className="w-full flex flex-row justify-between font-[Geist] bg-gray-300/10 rounded-2xl py-12 px-5">
       <View className="flex flex-row items-center">
-        <Image
-          source={require("../../assets/icons/alt_route.png")}
-          className=""
-        />
+        <Image source={alt_route as ImageSourcePropType} className="" />
         <Text className="text-3xl text-white font-bold w-1/2 text-wrap">
           {routeName}
         </Text>
