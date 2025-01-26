@@ -2,11 +2,23 @@ import { Href, Link } from "expo-router";
 import { Text, View } from "react-native";
 import { useLocation } from "../context/location-context";
 import { useEffect } from "react";
-import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 const DashboardScreen = () => {
   const { location, setLocation } = useLocation();
 
   useEffect(() => {
+    const fetchLocal = async () => {
+      const sourceStorage = await AsyncStorage.getItem("source");
+      const destinationStorage = await AsyncStorage.getItem("destination");
+
+      setLocation({
+        source: sourceStorage as string,
+        destination: destinationStorage as string,
+      });
+    };
+
+    fetchLocal();
+
     if (!location.source || !location.destination) {
       console.log("Nope!");
       return;
@@ -30,7 +42,7 @@ const DashboardScreen = () => {
     };
 
     fetchRoutes();
-  });
+  }, []);
   return (
     <View>
       <Link href="/routes/0">

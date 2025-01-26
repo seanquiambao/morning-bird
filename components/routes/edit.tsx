@@ -10,6 +10,16 @@ import bg1 from "@/assets/images/bg1.png";
 import directions from "@/assets/icons/directions.png";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useLocation } from "../context/location-context";
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+const storeLocal = async (value: string) => {
+  try {
+    await AsyncStorage.setItem("destination", value);
+  } catch (error) {
+    console.error(error);
+  }
+};
 const DestinationScreen = () => {
   const { location, setLocation } = useLocation();
   return (
@@ -27,6 +37,7 @@ const DestinationScreen = () => {
           <GooglePlacesAutocomplete
             placeholder="Search"
             onPress={(data, details = null) => {
+              storeLocal(data.description);
               setLocation({ ...location, destination: data.description });
             }}
             query={{

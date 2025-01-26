@@ -12,7 +12,7 @@ interface props {
 const Location = ({ locationsID, locationName, routeName, eta }: props) => {
   return (
     <View className="bg-white/10 rounded-3xl w-5/6 flex flex-col p-5">
-        <Link href={`/routes/${locationsID}` as Href}>
+      <Link href={`/routes/${locationsID}` as Href}>
         <View className="">
             <View className="flex items-start">
                 <Text className="text-5xl text-white font-bold font-[Geist]"> {locationName} </Text>
