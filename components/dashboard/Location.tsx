@@ -1,6 +1,7 @@
 import { View, Text, Image } from "react-native";
 import { Href, Link } from "expo-router";
 import Route from "@/components/routes/route";
+import sun from "@/assets/icons/sun.png";
 
 interface props {
   locationName: string;
