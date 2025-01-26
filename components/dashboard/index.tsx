@@ -2,6 +2,7 @@ import { Href, Link } from "expo-router";
 import { ImageBackground, Text, View } from "react-native";
 import React from "react";
 import dashboardgradient from "@/assets/images/dashboard-gradient.png";
+import SetHomeLocation from "./homelocation";
 import AddLocation from "./AddLocation";
 import Location from "./Location";
 import { useLocation } from "../context/location-context";
@@ -51,16 +52,17 @@ const DashboardScreen = () => {
   return (
     <ImageBackground
       source={dashboardgradient}
-      className="flex flex-col items-center h-full w-full py-8"
+      className="flex flex-col items-center h-full w-full py-8 gap-y-5"
     >
       <View>
         <Text className="font/[Geist-VariableFont] text-5xl font-semibold text-white py-8">
           Good Morning!
         </Text>
       </View>
+      <SetHomeLocation location={location.source} />
       <Location
         locationsID={"3"}
-        locationName="hello"
+        locationName={location.destination}
         routeName={"Route"}
         eta={"15"}
       />
