@@ -40,17 +40,17 @@ const RoutesScreen = () => {
   }, []);
   return (
     <View>
-    <ImageBackground source={bg} className="flex flex-col p-4 h-full">
-      <View className="items-center pb-5"> 
-        <Image source={direction} />
-        <Text className="text-white font-[Geist] text-4xl font-bold">
-          {location.destination}
-        </Text>
-      </View>
-      <View className="items-start">
-        <Text className="text-white font-[Geist] font-bold text-xl">
-          All Routes
-        </Text>
+      <ImageBackground source={bg} className="flex flex-col p-4 h-full">
+        <View className="items-center pb-5">
+          <Image source={direction} />
+          <Text className="text-white font-[Geist] text-4xl font-bold">
+            {location.destination}
+          </Text>
+        </View>
+        <View className="items-start">
+          <Text className="text-white font-[Geist] font-bold text-xl">
+            All Routes
+          </Text>
         </View>
         <View className="flex flex-col gap-4">
           {items.map((item: any, index: any) => (

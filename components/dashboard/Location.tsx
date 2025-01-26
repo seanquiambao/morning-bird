@@ -18,11 +18,20 @@ const Location = ({ locationName, routeName, eta }: props) => {
             <Text className="text-5xl text-white font-bold font-[Geist]">
               {locationName}
             </Text>
+            <View className="flex flex-row items-center gap-4">
+              <Image source={sun} />
+              <Text className="text-3xl text-white font-bold font-[Geist]">
+                60°F
+              </Text>
+              <Text className="text-xl text-white font-bold font-[Geist]">
+                H:61° L:47°
+              </Text>
+            </View>
             <Text className="text-xl text-white font-bold font-[Geist]">
               Optimal Route
             </Text>
           </View>
-          <View className="">
+          <View>
             <Route routeName={routeName} eta={eta} />
           </View>
         </View>
