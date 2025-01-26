@@ -11,7 +11,7 @@ interface props {
 
 const Location = ({ locationName, routeName, eta }: props) => {
   return (
-    <View className="bg-white/10 rounded-3xl w-5/6 flex flex-col p-5">
+    <View className="bg-white/10 rounded-3xl w-11/12 flex flex-col p-5">
       <Link href={"/routes" as Href}>
         <View className="">
           <View className="flex items-start">

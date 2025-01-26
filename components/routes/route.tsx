@@ -27,7 +27,7 @@ const Route = ({ routeName, eta }: props) => {
         </Text>
       </View>
       <View className="flex flex-col self-center">
-        <Text className="text-5xl text-white font-bold">{formattedETA}</Text>
+        <Text className="text-4xl text-white font-bold">{formattedETA}</Text>
       </View>
     </View>
   );

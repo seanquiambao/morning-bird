@@ -51,7 +51,7 @@ const DashboardScreen = () => {
     fetchRoutes().then((data) => {
       setItems(data.routes);
     });
-  }, [items]);
+  }, [location.source, location.destination]);
   return (
     <ImageBackground
       source={dashboardgradient as ImageSourcePropType}
