@@ -10,7 +10,16 @@ import bg1 from "@/assets/images/bg1.png";
 import directions from "@/assets/icons/directions.png";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useLocation } from "../context/location-context";
-const DestinationScreen = () => {
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+const storeLocal = async (value: string) => {
+  try {
+    await AsyncStorage.setItem("source", value);
+  } catch (error) {
+    console.error(error);
+  }
+};
+const SourceScreen = () => {
   const { location, setLocation } = useLocation();
   return (
     <ImageBackground source={bg1} className="flex flex-col p-4 h-full">
@@ -27,6 +36,7 @@ const DestinationScreen = () => {
           <GooglePlacesAutocomplete
             placeholder="Search"
             onPress={(data, details = null) => {
+              storeLocal(data.description);
               setLocation({ ...location, source: data.description });
             }}
             query={{
@@ -40,4 +50,4 @@ const DestinationScreen = () => {
   );
 };
 
-export default DestinationScreen;
+export default SourceScreen;

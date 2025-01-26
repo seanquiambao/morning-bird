@@ -4,8 +4,50 @@ import React from "react";
 import dashboardgradient from "@/assets/images/dashboard-gradient.png";
 import AddLocation from "./AddLocation";
 import Location from "./Location";
+import { useLocation } from "../context/location-context";
+import { useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const DashboardScreen = () => {
+  const { location, setLocation } = useLocation();
+
+  useEffect(() => {
+    const fetchLocal = async () => {
+      const sourceStorage = await AsyncStorage.getItem("source");
+      const destinationStorage = await AsyncStorage.getItem("destination");
+
+      setLocation({
+        source: sourceStorage as string,
+        destination: destinationStorage as string,
+      });
+    };
+
+    fetchLocal();
+
+    if (!location.source || !location.destination) {
+      console.log("Nope!");
+      return;
+    }
+
+    const fetchRoutes = async () => {
+      try {
+        const response = await fetch(
+          `https://maps.googleapis.com/maps/api/directions/json?origin=${location.source}&destination=${location.destination}&alternatives=true&key=${process.env.EXPO_PUBLIC_GOOGLE_MAPS_API}`,
+        );
+
+        if (!response.ok) {
+          throw new Error(`HTTP Error ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchRoutes();
+  }, []);
   return (
     <ImageBackground
       source={dashboardgradient}
@@ -16,9 +58,14 @@ const DashboardScreen = () => {
           Good Morning!
         </Text>
       </View>
-      <Location locationsID={"3"} routeName={"Route"} eta={"15"} />
+      <Location
+        locationsID={"3"}
+        locationName="hello"
+        routeName={"Route"}
+        eta={"15"}
+      />
       <View className="h-8"></View>
-      <AddLocation locationsID="1"/>
+      <AddLocation locationsID="1" />
     </ImageBackground>
   );
 };

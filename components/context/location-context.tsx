@@ -19,8 +19,8 @@ const LocationContext = createContext<contextType | null>(null);
 
 export const LocationProvider = ({ children }: props) => {
   const [location, setLocation] = useState({
-    source: "Mumbai",
-    destination: "Pune",
+    source: "",
+    destination: "",
   });
 
   return (
