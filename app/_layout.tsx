@@ -11,7 +11,6 @@ import "../globals.css";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     Geist: require("../assets/fonts/Geist-VariableFont_wght.ttf"),
