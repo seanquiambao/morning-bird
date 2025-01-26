@@ -29,10 +29,7 @@ const SourceScreen = () => {
     >
       <View className="flex flex-col gap-4">
         <Image source={home as ImageSourcePropType} className="self-center" />
-        <TextInput
-          value="HOME"
-          className="text-white self-center font-bold text-6xl"
-        />
+        <Text className="text-4xl text-white font-bold self-center">Home</Text>
       </View>
       <View className="flex flex-col gap-4">
         <Text className="font-bold text-white">Location</Text>
