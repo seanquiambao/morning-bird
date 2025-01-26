@@ -19,11 +19,11 @@ const Route = ({ routeName, eta }: props) => {
   }
   return (
     <View className="w-full flex flex-row justify-between font-[Geist] bg-gray-300/10 rounded-2xl py-12 px-5">
-      <Image
-        source={require("../../assets/icons/alt_route.png")}
-        className=""
-      />
-      <View className="">
+      <View className="flex flex-row">
+        <Image
+          source={require("../../assets/icons/alt_route.png")}
+          className=""
+        />
         <Text className="text-3xl text-white font-bold">{routeName}</Text>
       </View>
       <View className="flex flex-col">
