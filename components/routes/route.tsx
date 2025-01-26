@@ -9,8 +9,8 @@ interface props {
 
 const Route = ({ routeName, eta }: props) => {
   let formattedETA = "";
-  const hours = eta.match(/(\d+)\s*hours?/);
-  const min = eta.match(/(\d+)\s*mins?/);
+  const hours = eta?.match(/(\d+)\s*hours?/);
+  const min = eta?.match(/(\d+)\s*mins?/);
   if (hours && min) {
     formattedETA = `${hours[1]}h ${min[1]}m`;
   } else if (min) {

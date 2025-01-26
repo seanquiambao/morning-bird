@@ -48,13 +48,10 @@ const DashboardScreen = () => {
       }
     };
 
-    
     fetchRoutes().then((data) => {
-      console.log(data.routes[0]);  
       setItems(data.routes);
-      console.log(items);
     });
-  }, []);
+  }, [items]);
   return (
     <ImageBackground
       source={dashboardgradient as ImageSourcePropType}
