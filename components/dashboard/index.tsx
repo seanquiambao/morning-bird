@@ -1,5 +1,5 @@
 import { Href, Link } from "expo-router";
-import { ImageBackground, Text, View } from "react-native";
+import { ImageBackground, ImageSourcePropType, Text, View } from "react-native";
 import React from "react";
 import dashboardgradient from "@/assets/images/dashboard-gradient.png";
 import SetHomeLocation from "./homelocation";
@@ -51,7 +51,7 @@ const DashboardScreen = () => {
   }, []);
   return (
     <ImageBackground
-      source={dashboardgradient}
+      source={dashboardgradient as ImageSourcePropType}
       className="flex flex-col items-center h-full w-full py-8 gap-y-6"
     >
       <View>

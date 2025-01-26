@@ -5,6 +5,7 @@ import {
   ImageBackground,
   Image,
   Pressable,
+  ImageSourcePropType,
 } from "react-native";
 import bg1 from "@/assets/images/bg1.png";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
@@ -22,9 +23,12 @@ const storeLocal = async (value: string) => {
 const SourceScreen = () => {
   const { location, setLocation } = useLocation();
   return (
-    <ImageBackground source={bg1} className="flex flex-col p-4 h-full">
+    <ImageBackground
+      source={bg1 as ImageSourcePropType}
+      className="flex flex-col p-4 h-full"
+    >
       <View className="flex flex-col gap-4">
-        <Image source={home} className="self-center" />
+        <Image source={home as ImageSourcePropType} className="self-center" />
         <TextInput
           value="HOME"
           className="text-white self-center font-bold text-6xl"
@@ -35,19 +39,18 @@ const SourceScreen = () => {
         <View className="w-full h-[100%] ">
           <GooglePlacesAutocomplete
             placeholder="Search" // Darken placeholder text
-            
             styles={{
               textInput: {
-                color: '#000', // Darken input text
-                backgroundColor: 'white', // Set input background
+                color: "#000", // Darken input text
+                backgroundColor: "white", // Optional: Set input background
               },
               listView: {
-                backgroundColor: '#fff', // Set uniform background for suggestions
-                width: '100%',
+                backgroundColor: "#fff", // Set uniform background for suggestions
+                width: "100%",
               },
               row: {
-                backgroundColor: '#fff', // Uniform background for each suggestion
-                width: '100%',
+                backgroundColor: "#fff", // Uniform background for each suggestion
+                width: "100%",
               },
               separator: {
                 height: 0, // Remove separators
