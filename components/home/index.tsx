@@ -3,6 +3,7 @@ import { Link } from "expo-router";
 import { ImageBackground } from "react-native";
 import bg1 from "@/assets/images/bg1.png";
 import logo from "@/assets/images/logo.png";
+
 const HomeScreen = () => {
   return (
     <ImageBackground

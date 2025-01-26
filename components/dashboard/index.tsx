@@ -52,7 +52,7 @@ const DashboardScreen = () => {
   return (
     <ImageBackground
       source={dashboardgradient}
-      className="flex flex-col items-center h-full w-full py-8 gap-y-5"
+      className="flex flex-col items-center h-full w-full py-8 gap-y-6"
     >
       <View>
         <Text className="font/[Geist-VariableFont] text-5xl font-semibold text-white py-8">
@@ -61,13 +61,10 @@ const DashboardScreen = () => {
       </View>
       <SetHomeLocation location={location.source} />
       <Location
-        locationsID={"3"}
         locationName={location.destination}
         routeName={"Route"}
         eta={"15"}
       />
-      <View className="h-8"></View>
-      <AddLocation locationsID="1" />
     </ImageBackground>
   );
 };
