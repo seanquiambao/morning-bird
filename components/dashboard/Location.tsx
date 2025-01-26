@@ -1,8 +1,7 @@
 import { View, Text, Image, ImageSourcePropType } from "react-native";
 import { Href, Link } from "expo-router";
 import Route from "@/components/routes/route";
-import sun from "@/assets/icons/sun.png";
-
+import cloud from "@/assets/icons/cloud.png";
 interface props {
   locationName: string;
   routeName: string;
@@ -19,12 +18,12 @@ const Location = ({ locationName, routeName, eta }: props) => {
               {locationName}
             </Text>
             <View className="flex flex-row items-center gap-4">
-              <Image source={sun as ImageSourcePropType} />
+              <Image source={cloud as ImageSourcePropType} />
               <Text className="text-3xl text-white font-bold font-[Geist]">
-                60°F
+                49°F
               </Text>
               <Text className="text-xl text-white font-bold font-[Geist]">
-                H:61° L:47°
+                H:54° L:45°
               </Text>
             </View>
             <Text className="text-xl text-white font-bold font-[Geist]">
