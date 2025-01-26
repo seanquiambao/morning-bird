@@ -10,7 +10,6 @@ const AddLocation = ({ locationsID }: props) => {
     <View className="bg-white/25 h-[10%] w-[75%] justify-center items-center rounded-3xl">
       <Link href={`/routes/${locationsID}` as Href}>
         <Image source={require("../assets/icons/+.png")} />
-
         <Text className="text-white text-center text-lg font-bold font-[Geist]">
           Add Location
         </Text>
