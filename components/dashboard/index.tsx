@@ -6,12 +6,12 @@ import SetHomeLocation from "./homelocation";
 import AddLocation from "./AddLocation";
 import Location from "./Location";
 import { useLocation } from "../context/location-context";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const DashboardScreen = () => {
   const { location, setLocation } = useLocation();
-
+  const [items, setItems] = useState<Record<any, any>>([]);
   useEffect(() => {
     const fetchLocal = async () => {
       const sourceStorage = await AsyncStorage.getItem("source");
@@ -41,13 +41,19 @@ const DashboardScreen = () => {
         }
 
         const data = await response.json();
+
         return data;
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchRoutes();
+    
+    fetchRoutes().then((data) => {
+      console.log(data.routes[0]);  
+      setItems(data.routes);
+      console.log(items);
+    });
   }, []);
   return (
     <ImageBackground
@@ -62,8 +68,8 @@ const DashboardScreen = () => {
       <SetHomeLocation location={location.source} />
       <Location
         locationName={location.destination}
-        routeName={"Route"}
-        eta={"15"}
+        routeName={items[0]?.summary || "NA"}
+        eta={items[0]?.legs[0].duration.text || "NA"}
       />
     </ImageBackground>
   );
