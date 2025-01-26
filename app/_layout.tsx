@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 import "../globals.css";
 import "react-native-get-random-values";
+import { LocationProvider } from "@/components/context/location-context";
+import { View } from "react-native";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -29,11 +31,12 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
+      <LocationProvider>
+        <Stack>
+          <Stack.Screen name="(dashboard)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      </LocationProvider>
     </ThemeProvider>
   );
 }

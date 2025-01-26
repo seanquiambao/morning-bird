@@ -8,7 +8,10 @@ import {
 } from "react-native";
 import bg1 from "@/assets/images/bg1.png";
 import directions from "@/assets/icons/directions.png";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { useLocation } from "../context/location-context";
 const HomeScreen = () => {
+  const { location, setLocation } = useLocation();
   return (
     <ImageBackground source={bg1} className="flex flex-col p-4 h-full">
       <View className="flex flex-col gap-4">
@@ -19,7 +22,9 @@ const HomeScreen = () => {
         <Text className="font-bold text-white">Location</Text>
         <GooglePlacesAutocomplete
           placeholder="Search"
-          onPress={(data, details = null) => {}}
+          onPress={(data, details = null) => {
+            setLocation({ ...location, source: data.description });
+          }}
           query={{
             key: process.env.EXPO_PUBLIC_GOOGLE_MAPS_API,
             language: "en",
