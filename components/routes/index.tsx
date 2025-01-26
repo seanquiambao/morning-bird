@@ -35,7 +35,6 @@ const RoutesScreen = () => {
     };
 
     fetchRoutes().then((data) => {
-      console.log(data.routes[0]);
       setItems(data.routes);
     });
   }, []);
