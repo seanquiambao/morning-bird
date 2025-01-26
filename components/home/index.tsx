@@ -1,7 +1,6 @@
-import { View, Text, Image } from "react-native";
-import { Href, Link } from "expo-router";
+import { Text, Image } from "react-native";
+import { Link } from "expo-router";
 import { ImageBackground } from "react-native";
-import Route from "@/components/routes/route";
 import bg1 from "@/assets/images/bg1.png";
 import logo from "@/assets/images/logo.png";
 const HomeScreen = () => {

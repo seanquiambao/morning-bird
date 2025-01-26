@@ -1,8 +1,13 @@
 import { Href, Link } from "expo-router";
-import { Text, View } from "react-native";
+import { ImageBackground, Text, View } from "react-native";
+import React from "react";
+import dashboardgradient from "@/assets/images/dashboard-gradient.png";
+import AddLocation from "./AddLocation";
+import Location from "./Location";
 import { useLocation } from "../context/location-context";
 import { useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
 const DashboardScreen = () => {
   const { location, setLocation } = useLocation();
 
@@ -44,18 +49,24 @@ const DashboardScreen = () => {
     fetchRoutes();
   }, []);
   return (
-    <View>
-      <Link href="/routes/0">
-        <Text className="p-5">Dashboard Screen</Text>
-      </Link>
-
-      <Link href="/start">
-        <Text className="p-5">Dashboard Screen</Text>
-      </Link>
-
-      <Text>{location.source}</Text>
-      <Text>{location.destination}</Text>
-    </View>
+    <ImageBackground
+      source={dashboardgradient}
+      className="flex flex-col items-center h-full w-full py-8"
+    >
+      <View>
+        <Text className="font/[Geist-VariableFont] text-5xl font-semibold text-white py-8">
+          Good Morning!
+        </Text>
+      </View>
+      <Location
+        locationsID={"3"}
+        locationName="hello"
+        routeName={"Route"}
+        eta={"15"}
+      />
+      <View className="h-8"></View>
+      <AddLocation locationsID="1" />
+    </ImageBackground>
   );
 };
 
