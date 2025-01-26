@@ -35,11 +35,10 @@ const SourceScreen = () => {
         <View className="w-full h-[100%] ">
           <GooglePlacesAutocomplete
             placeholder="Search" // Darken placeholder text
-            
             styles={{
               textInput: {
                 color: '#000', // Darken input text
-                backgroundColor: 'white', // Set input background
+                backgroundColor: 'white', // Optional: Set input background
               },
               listView: {
                 backgroundColor: '#fff', // Set uniform background for suggestions
