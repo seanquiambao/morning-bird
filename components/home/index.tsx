@@ -1,13 +1,14 @@
-import { View, Text } from "react-native";
-import { Href, Link } from "expo-router";
-import Route from "@/components/routes/route";
+import React from "react";
+import { View } from "react-native";
+import DashboardScreen from "@/components/dashboard";
+
 const HomeScreen = () => {
   return (
-    <View className="bg-blue-500 ">
-      <Link href={"/(dashboard)" as Href}>
-        <Route routeName="Route 61" eta="15" />
-      </Link>
+    
+    <View className="flex flex-col items-center h-full">
+      <DashboardScreen />
     </View>
+    
   );
 };
 
