@@ -1,5 +1,5 @@
-import { View, Text } from "react-native";
-import { alt_route } from "@/assets/icons/alt_route.png";
+import { View, Text, ImageSourcePropType } from "react-native";
+import alt_route from "@/assets/icons/alt_route.png";
 import { Image } from "react-native-reanimated/lib/typescript/Animated";
 
 type props = {
@@ -9,7 +9,7 @@ type props = {
 const Route = ({ routeName, eta }: props) => {
   <View className="w-5/6 flex flex-row font-[Geist] text-white ">
     <View>
-      <Image source={alt_route} />
+      <Image source={alt_route as ImageSourcePropType} />
     </View>
     <View className="text-xl">
       <Text className="">{routeName}</Text>

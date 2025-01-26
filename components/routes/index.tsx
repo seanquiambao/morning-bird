@@ -5,6 +5,8 @@ import Route from "@/components/routes/route";
 import bg from "@/assets/images/bg1.png";
 import { useLocation } from "../context/location-context";
 import { useEffect, useState } from "react";
+import pen from "@/assets/icons/pen.png";
+import { Link } from "expo-router";
 
 const RoutesScreen = () => {
   const { location, setLocation } = useLocation();
@@ -40,14 +42,18 @@ const RoutesScreen = () => {
     <View>
       <ImageBackground
         source={bg as ImageSourcePropType}
-        className="flex flex-col p-4 h-full"
+        className="flex flex-col p-4 h-full w-full"
       >
+        <Link href="/routes/edit" className="self-end">
+          <Image source={pen as ImageSourcePropType} />
+        </Link>
         <View className="items-center pb-5">
           <Image source={direction as ImageSourcePropType} />
           <Text className="text-white font-[Geist] text-4xl font-bold">
             {location.destination}
           </Text>
         </View>
+
         <View className="items-start">
           <Text className="text-white font-[Geist] font-bold text-xl">
             All Routes
