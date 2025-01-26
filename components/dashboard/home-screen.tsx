@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import bg1 from "@/assets/images/bg1.png";
 import directions from "@/assets/icons/directions.png";
-const StartScreen = () => {
+const HomeScreen = () => {
   return (
     <ImageBackground source={bg1} className="flex flex-col p-4 h-full">
       <View className="flex flex-col gap-4">
@@ -28,4 +28,4 @@ const StartScreen = () => {
   );
 };
 
-export default StartScreen;
+export default HomeScreen;

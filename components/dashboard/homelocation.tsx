@@ -5,7 +5,7 @@ const SetHomeLocation = () => {
   return (
     <View className="flex-row items-center justify-center p-4 bg-white/10 rounded-2xl w-[80%]">
       <Image
-        source={require("../assets/icons/home.png")}
+        source={require("../../assets/icons/home.png")}
         className="w-8 h-8 mr-8"
       />
       <View>
