@@ -68,8 +68,8 @@ const DashboardScreen = () => {
       <SetHomeLocation location={location.source} />
       <Location
         locationName={location.destination}
-        routeName={items[0]?.summary || "NA"}
-        eta={items[0]?.legs[0].duration.text || "NA"}
+        routeName={items[0]?.summary}
+        eta={items[0]?.legs[0].duration.text}
       />
     </ImageBackground>
   );
