@@ -1,6 +1,7 @@
 import { View, Text, Image } from "react-native";
 import { Href, Link } from "expo-router";
 import Route from "@/components/routes/route";
+import sun from "@/assets/icons/sun.png";
 
 interface props {
   locationName: string;
@@ -19,6 +20,17 @@ const Location = ({ locationName, routeName, eta }: props) => {
           {locationName}
         </Text>
       </View>
+
+      <View className="flex flex-row items-center gap-4">
+        <Image source={sun} />
+        <Text className="text-xl text-white font-bold font-[Geist]">
+          60°F
+        </Text>
+        <Text className="text-m text-white font-bold font-[Geist]">
+        H:61° L:47°
+        </Text>
+      </View>
+
       <View>
         <Text className="text-xl text-white font-bold font-[Geist]">
           Optimal Route
