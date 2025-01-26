@@ -7,6 +7,16 @@ interface props {
 }
 
 const Route = ({ routeName, eta }: props) => {
+  let formattedETA = "";
+  const hours = eta.match(/(\d+)\s*hours?/);
+  const min = eta.match(/(\d+)\s*mins?/);
+  if (hours && min) {
+    formattedETA = `${hours[1]}h ${min[1]}m`;
+  } else if (min) {
+    formattedETA = `${min[1]}m`;
+  } else {
+    formattedETA = "0m";
+  }
   return (
     <View className="w-full flex flex-row justify-between font-[Geist] bg-gray-300/10 rounded-2xl py-12 px-5">
       <Image
@@ -17,8 +27,7 @@ const Route = ({ routeName, eta }: props) => {
         <Text className="text-3xl text-white font-bold">{routeName}</Text>
       </View>
       <View className="flex flex-col">
-        <Text className="text-5xl text-white font-bold">{eta}</Text>
-        <Text className="text-3xl text-white font-bold">min</Text>
+        <Text className="text-5xl text-white font-bold">{formattedETA}</Text>
       </View>
     </View>
   );
