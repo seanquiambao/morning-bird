@@ -42,15 +42,26 @@ const RoutesScreen = () => {
   return (
     <View className="">
     <ImageBackground source={bg} className="flex flex-col p-4 h-full">
-      <View className=""> 
+      <View className="items-center pb-5"> 
         <Image source={direction} />
-      <View/>
+        <Text className="text-white font-[Geist] text-4xl font-bold">
+          {location.destination}
+        </Text>
+      </View>
+      <View className="items-start">
+        <Text className="text-white font-[Geist] font-bold text-xl">
+          All Routes
+        </Text>
+      </View>
+      <View className="items-center">
         {items.map((item: any, index: any) => (
+          <View className="pb-5">
           <Route
             key = {index}
             routeName="Route"
-            eta = {item.legs[0].duration.text}
+            eta = {item.legs[0].duration.text} 
           />
+          </View>
         ))}
       </View>
     </ImageBackground>
