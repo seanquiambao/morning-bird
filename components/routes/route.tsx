@@ -8,7 +8,7 @@ interface props {
 
 const Route = ({ routeName, eta }: props) => {
   return (
-    <View className="w-3/4 flex flex-row justify-between font-[Geist] bg-gray-300/10 rounded-2xl py-12 px-5">
+    <View className="w-full flex flex-row justify-between font-[Geist] bg-gray-300/10 rounded-2xl py-12 px-5">
       <Image
         source={require("../../assets/icons/alt_route.png")}
         className=""
