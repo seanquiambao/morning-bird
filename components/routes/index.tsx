@@ -37,7 +37,7 @@ const RoutesScreen = () => {
     fetchRoutes().then((data) => {
       setItems(data.routes);
     });
-  }, []);
+  }, [location.source, location.destination]);
   return (
     <View>
       <ImageBackground
