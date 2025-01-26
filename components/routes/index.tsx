@@ -40,7 +40,7 @@ const RoutesScreen = () => {
     });
   }, []);
   return (
-    <View className="">
+    <View>
     <ImageBackground source={bg} className="flex flex-col p-4 h-full">
       <View className="items-center pb-5"> 
         <Image source={direction} />
@@ -52,22 +52,6 @@ const RoutesScreen = () => {
         <Text className="text-white font-[Geist] font-bold text-xl">
           All Routes
         </Text>
-      </View>
-      <View className="items-center">
-        {items.map((item: any, index: any) => (
-          <View className="pb-5">
-          <Route
-            key = {index}
-            routeName="Route"
-            eta = {item.legs[0].duration.text} 
-          />
-          </View>
-        ))}
-      </View>
-    </ImageBackground>
-      <ImageBackground source={bg} className="flex flex-col p-4 h-full">
-        <View>
-          <Image source={direction} />
         </View>
         <View className="flex flex-col gap-4">
           {items.map((item: any, index: any) => (
