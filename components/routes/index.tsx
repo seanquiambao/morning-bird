@@ -1,12 +1,10 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, ImageSourcePropType } from "react-native";
 import { ImageBackground } from "react-native";
-import { Href, Link } from "expo-router";
 import direction from "@/assets/icons/directions.png";
 import Route from "@/components/routes/route";
 import bg from "@/assets/images/bg1.png";
 import { useLocation } from "../context/location-context";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 const RoutesScreen = () => {
   const { location, setLocation } = useLocation();
@@ -40,9 +38,12 @@ const RoutesScreen = () => {
   }, []);
   return (
     <View>
-      <ImageBackground source={bg} className="flex flex-col p-4 h-full">
+      <ImageBackground
+        source={bg as ImageSourcePropType}
+        className="flex flex-col p-4 h-full"
+      >
         <View className="items-center pb-5">
-          <Image source={direction} />
+          <Image source={direction as ImageSourcePropType} />
           <Text className="text-white font-[Geist] text-4xl font-bold">
             {location.destination}
           </Text>

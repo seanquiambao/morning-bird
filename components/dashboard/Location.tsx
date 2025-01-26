@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, ImageSourcePropType } from "react-native";
 import { Href, Link } from "expo-router";
 import Route from "@/components/routes/route";
 import sun from "@/assets/icons/sun.png";
@@ -19,7 +19,7 @@ const Location = ({ locationName, routeName, eta }: props) => {
               {locationName}
             </Text>
             <View className="flex flex-row items-center gap-4">
-              <Image source={sun} />
+              <Image source={sun as ImageSourcePropType} />
               <Text className="text-3xl text-white font-bold font-[Geist]">
                 60°F
               </Text>
