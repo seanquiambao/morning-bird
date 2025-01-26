@@ -33,10 +33,9 @@ const DestinationScreen = () => {
           source={directions as ImageSourcePropType}
           className="self-center"
         />
-        <TextInput
-          value="UCR"
-          className="text-white self-center font-bold text-6xl"
-        />
+        <Text className="text-white font-bold text-4xl self-center">
+          {location.destination}
+        </Text>
       </View>
       <View className="flex flex-col gap-4">
         <Text className="font-bold text-white">Location</Text>
