@@ -1,2 +1,2 @@
-import StartScreen from "@/components/home/start";
-export default StartScreen;
+import HomeScreen from "@/components/dashboard/home-screen";
+export default HomeScreen;
