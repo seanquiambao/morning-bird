@@ -37,16 +37,16 @@ const SourceScreen = () => {
             placeholder="Search" // Darken placeholder text
             styles={{
               textInput: {
-                color: '#000', // Darken input text
-                backgroundColor: 'white', // Optional: Set input background
+                color: "#000", // Darken input text
+                backgroundColor: "white", // Optional: Set input background
               },
               listView: {
-                backgroundColor: '#fff', // Set uniform background for suggestions
-                width: '100%',
+                backgroundColor: "#fff", // Set uniform background for suggestions
+                width: "100%",
               },
               row: {
-                backgroundColor: '#fff', // Uniform background for each suggestion
-                width: '100%',
+                backgroundColor: "#fff", // Uniform background for each suggestion
+                width: "100%",
               },
               separator: {
                 height: 0, // Remove separators

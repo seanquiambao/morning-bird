@@ -35,9 +35,10 @@ const RoutesScreen = () => {
     };
 
     fetchRoutes().then((data) => {
+      console.log(data.routes[0]);
       setItems(data.routes);
     });
-  });
+  }, []);
   return (
     <View className="">
       <ImageBackground source={bg} className="flex flex-col p-4 h-full">
@@ -48,7 +49,7 @@ const RoutesScreen = () => {
           {items.map((item: any, index: any) => (
             <Route
               key={index}
-              routeName="Route"
+              routeName={item.summary}
               eta={item.legs[0].duration.text}
             />
           ))}
